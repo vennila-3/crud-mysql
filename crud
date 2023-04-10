@@ -1,0 +1,138 @@
+// create operation
+// ------------------------add operation---------------------------------------------
+// app.get('/adduser',(req,res)=>
+// {
+//     res.render('adduser');
+// })
+// //request from adduser
+// //-------------------------- writing adding to the db----------------------------------
+// app.post('/adduser',(req,res)=>{
+//     con.getConnection((err,connection)=>
+//     {
+//        if(err)
+//        throw err;
+//        let id=req.body.id;
+//        let blood=req.body.blood;
+//        let quann=req.body.liter;
+//        console.log(id,blood,quann);
+//        console.log(req.url);
+//        connection.query("insert into hospital1(ID,BLOOD ,QUANTITY) values(?,?,?)",[id,blood,quann],(err,rows)=>{
+//         connection.release();
+//         if(err)
+//         throw err;
+//         else{
+            
+//             res.redirect('/')
+//         }
+//        })
+//     })
+// })
+
+// //------------------------- update operation-----------------------------------------------
+// //------------------------- request it select the id details--------------------------------
+// app.get('/edituser',(req,res)=>{
+//     res.render('book')
+//     let id=req.query.id;
+//     con.getConnection((err,connection)=>{
+//         if(err)
+//         throw err;
+//         connection.query("select * from hospital1 where ID=?",[id],(err,rows)=>{
+//             connection.release();
+//             if(err)
+//             throw err;
+//             else
+//             console.log();
+//             res.render('edituser',{rows});
+//         })
+//     })
+
+// })
+
+// //-------------------------update values-----------------------------------------
+
+// app.post('/edituser',(req,res)=>{
+//     let blood=req.body.blood;
+//     let quann=req.body.liter;
+//     let id=req.body.id;
+    
+//     con.getConnection((err,connection)=>{
+//         if(err)
+//         throw err;
+//         connection.query("update hospital1  set BLOOD=?,QUANTITY=? where ID=?",[blood,quann,id],(err,rows)=>{
+//             connection.release();
+//             if(err)
+//             throw err;
+//             else
+//             res.redirect('/');
+//         })
+//     })
+// })
+
+// ------------------------reading operation-----------------------------------------
+
+// app.get('/',(req,res)=>{
+//     con.getConnection((err,connection)=>{
+//         if(err)
+//         console.log("not connected");
+//         connection.query("select * from hospital1 ",(err,rows)=>{
+//             if(err)
+//             console.log("not able to bring");
+//             else
+//             res.render('/',{rows});
+//         })
+//     })
+// })
+
+
+// app.get('/edituser',(req,res)=>{
+//     let id=req.query.id;
+//     con.getConnection((err,connection)=>{
+//         if(err)
+//         throw err;
+//         connection.query("select * from hospital4 where ID=?",[id],(err,rows)=>{
+//             connection.release();
+//             if(err)
+//             throw err;
+//             else
+//             res.render('edit',{rows});
+//         })
+//     })
+
+// })
+// })
+// //edit update after edit
+// app.post('/edituser',(req,res)=>{
+//     let id=req.query.id;
+//     let name=req.body.blood;
+//     let age=req.body.quanitity;
+//     con.getConnection((err,connection)=>{
+//         if(err)
+//         throw err;
+//         connection.query("update bloodgroup.hospital1 set BLOOD==?,QUANTITY=? where ID=?",[name,age,id],(err,rows)=>{
+//             connection.release();
+//             if(err)
+//             throw err;
+//             else
+//             res.redirect('/');
+//         })
+//     })
+// })
+// delete operation
+
+// -----------------------delete operation-------------------------------------------
+
+// app.get('/deleteuser',(req,res)=>{
+//    let id=req.query.id;
+//      con.getConnection((err,connection)=>{
+//        if(err)throw err;
+//        connection.query("delete from hospital1 where id=?",[id],(err,rows)=>{
+//             if(err)
+//             throw err;
+//              else res.redirect('/');
+//          })
+        
+//      })
+// })
+
+
+
